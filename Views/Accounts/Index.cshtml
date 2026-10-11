@@ -1,0 +1,5 @@
+@model IEnumerable<BankAccount>
+<div class="heading"><div><p class="eyebrow">Overview</p><h1>Bank Accounts</h1><p>Manage your demo accounts and balances.</p></div><a class="btn" asp-action="Create">+ New Account</a></div>
+<div class="panel"><table><thead><tr><th>ID</th><th>Account holder</th><th>Balance</th><th></th></tr></thead><tbody>
+@foreach (var a in Model) { <tr><td>#@a.Id</td><td>@a.HolderName</td><td>@a.Balance.ToString("N2")</td><td><a asp-action="Details" asp-route-id="@a.Id">View account →</a></td></tr> }
+</tbody></table>@if (!Model.Any()) { <p>No accounts yet. Create one to get started.</p> }</div>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mini Bank</title><link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /></head>
+<body><header><a asp-controller="Accounts" asp-action="Index">Mini Bank</a><span>ASP.NET Core MVC + EF Core</span></header>
+<main>@if (TempData["Success"] is string ok) { <div class="notice success">@ok</div> }
+@if (TempData["Error"] is string err) { <div class="notice error">@err</div> }
+@RenderBody()</main><footer>Educational banking demo — no real money</footer>
+@await RenderSectionAsync("Scripts", required: false)
+</body></html>

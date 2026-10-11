@@ -1,0 +1,6 @@
+@model CreateAccountViewModel
+<a asp-action="Index">← Back to accounts</a><h1>Create Account</h1>
+<div class="panel form-panel"><form asp-action="Create" method="post"><div asp-validation-summary="ModelOnly" class="error-text"></div>
+<label asp-for="HolderName"></label><input asp-for="HolderName" /><span asp-validation-for="HolderName" class="error-text"></span>
+<label asp-for="InitialBalance"></label><input asp-for="InitialBalance" type="number" min="0" step="0.01" /><span asp-validation-for="InitialBalance" class="error-text"></span>
+<button class="btn" type="submit">Create account</button></form></div>
